@@ -11,7 +11,7 @@ then
         --rm \
         --publish 4567:4567 \
         --volume "$(pwd):/plugin" \
-        trmnl/trmnlp "$@"
+        trmnl/trmnlp:latest "$@"
     exit
 fi
 
