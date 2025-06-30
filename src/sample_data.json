@@ -1,0 +1,746 @@
+{
+  "trmnl": {
+    "user": {
+      "name": "name",
+      "first_name": "first_name",
+      "last_name": "last_name",
+      "locale": "en",
+      "time_zone": "Eastern Time (US & Canada)",
+      "time_zone_iana": "America/New_York",
+      "utc_offset": -14400
+    },
+    "device": {
+      "friendly_id": "ABC123",
+      "percent_charged": 85,
+      "wifi_strength": 90,
+      "height": 480,
+      "width": 800
+    },
+    "system": {
+      "timestamp_utc": 1751279024
+    },
+    "plugin_settings": {
+      "instance_name": "instance_name",
+      "strategy": "polling",
+      "dark_mode": "no",
+      "polling_headers": "",
+      "polling_url": "https://api.open-meteo.com/v1/forecast?latitude=54&longitude=14&daily=weather_code,sunrise,sunset,temperature_2m_max,temperature_2m_min&hourly=temperature_2m,weather_code,is_day&models=best_match&current=temperature_2m,is_day,weather_code&timezone=auto&forecast_days=3\r\nhttps://andi4000.github.io/weather-app-assets/open-meteo/descriptions.v1.json\r\nhttps://andi4000.github.io/weather-app-assets/open-meteo/iconsmapping.v1.json",
+      "custom_fields_values": {}
+    },
+    "hello": "world"
+  },
+  "IDX_0": {
+    "latitude": 53.08,
+    "longitude": 8.799999,
+    "generationtime_ms": 0.07891654968261719,
+    "utc_offset_seconds": 7200,
+    "timezone": "Europe/Berlin",
+    "timezone_abbreviation": "GMT+2",
+    "elevation": 20,
+    "current_units": {
+      "time": "iso8601",
+      "interval": "seconds",
+      "temperature_2m": "°C",
+      "is_day": "",
+      "weather_code": "wmo code"
+    },
+    "current": {
+      "time": "2025-06-30T12:15",
+      "interval": 900,
+      "temperature_2m": 20.6,
+      "is_day": 1,
+      "weather_code": 1
+    },
+    "hourly_units": {
+      "time": "iso8601",
+      "temperature_2m": "°C",
+      "weather_code": "wmo code",
+      "is_day": ""
+    },
+    "hourly": {
+      "time": [
+        "2025-06-30T00:00",
+        "2025-06-30T01:00",
+        "2025-06-30T02:00",
+        "2025-06-30T03:00",
+        "2025-06-30T04:00",
+        "2025-06-30T05:00",
+        "2025-06-30T06:00",
+        "2025-06-30T07:00",
+        "2025-06-30T08:00",
+        "2025-06-30T09:00",
+        "2025-06-30T10:00",
+        "2025-06-30T11:00",
+        "2025-06-30T12:00",
+        "2025-06-30T13:00",
+        "2025-06-30T14:00",
+        "2025-06-30T15:00",
+        "2025-06-30T16:00",
+        "2025-06-30T17:00",
+        "2025-06-30T18:00",
+        "2025-06-30T19:00",
+        "2025-06-30T20:00",
+        "2025-06-30T21:00",
+        "2025-06-30T22:00",
+        "2025-06-30T23:00",
+        "2025-07-01T00:00",
+        "2025-07-01T01:00",
+        "2025-07-01T02:00",
+        "2025-07-01T03:00",
+        "2025-07-01T04:00",
+        "2025-07-01T05:00",
+        "2025-07-01T06:00",
+        "2025-07-01T07:00",
+        "2025-07-01T08:00",
+        "2025-07-01T09:00",
+        "2025-07-01T10:00",
+        "2025-07-01T11:00",
+        "2025-07-01T12:00",
+        "2025-07-01T13:00",
+        "2025-07-01T14:00",
+        "2025-07-01T15:00",
+        "2025-07-01T16:00",
+        "2025-07-01T17:00",
+        "2025-07-01T18:00",
+        "2025-07-01T19:00",
+        "2025-07-01T20:00",
+        "2025-07-01T21:00",
+        "2025-07-01T22:00",
+        "2025-07-01T23:00",
+        "2025-07-02T00:00",
+        "2025-07-02T01:00",
+        "2025-07-02T02:00",
+        "2025-07-02T03:00",
+        "2025-07-02T04:00",
+        "2025-07-02T05:00",
+        "2025-07-02T06:00",
+        "2025-07-02T07:00",
+        "2025-07-02T08:00",
+        "2025-07-02T09:00",
+        "2025-07-02T10:00",
+        "2025-07-02T11:00",
+        "2025-07-02T12:00",
+        "2025-07-02T13:00",
+        "2025-07-02T14:00",
+        "2025-07-02T15:00",
+        "2025-07-02T16:00",
+        "2025-07-02T17:00",
+        "2025-07-02T18:00",
+        "2025-07-02T19:00",
+        "2025-07-02T20:00",
+        "2025-07-02T21:00",
+        "2025-07-02T22:00",
+        "2025-07-02T23:00"
+      ],
+      "temperature_2m": [
+        15.3,
+        14.6,
+        13.6,
+        13.2,
+        12.8,
+        11.8,
+        11.9,
+        12.4,
+        14.6,
+        15.9,
+        17.4,
+        18.8,
+        20.3,
+        21.8,
+        23.2,
+        24.2,
+        25,
+        25.5,
+        25.6,
+        25.4,
+        24.7,
+        23.5,
+        21.8,
+        20.4,
+        19.2,
+        18.6,
+        17.6,
+        17,
+        16.6,
+        16.1,
+        15.8,
+        16.3,
+        17.6,
+        19.7,
+        22,
+        24.3,
+        26.4,
+        28.3,
+        29.7,
+        30.8,
+        31.4,
+        32,
+        32.2,
+        32.2,
+        31.7,
+        30.6,
+        28.5,
+        26.6,
+        25.4,
+        24.4,
+        23.5,
+        22.6,
+        22,
+        21.5,
+        21.4,
+        22,
+        23.5,
+        27,
+        28.8,
+        30.3,
+        31.8,
+        33.1,
+        34.2,
+        34.7,
+        34.9,
+        34.5,
+        32.4,
+        30.6,
+        29.1,
+        22.7,
+        19.7,
+        19.3
+      ],
+      "weather_code": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        3,
+        2,
+        3,
+        3,
+        0,
+        1,
+        2,
+        2,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        3,
+        3,
+        3
+      ],
+      "is_day": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "daily_units": {
+      "time": "iso8601",
+      "weather_code": "wmo code",
+      "sunrise": "iso8601",
+      "sunset": "iso8601",
+      "temperature_2m_max": "°C",
+      "temperature_2m_min": "°C"
+    },
+    "daily": {
+      "time": [
+        "2025-06-30",
+        "2025-07-01",
+        "2025-07-02"
+      ],
+      "weather_code": [
+        2,
+        0,
+        3
+      ],
+      "sunrise": [
+        "2025-06-30T05:02",
+        "2025-07-01T05:03",
+        "2025-07-02T05:04"
+      ],
+      "sunset": [
+        "2025-06-30T21:54",
+        "2025-07-01T21:54",
+        "2025-07-02T21:53"
+      ],
+      "temperature_2m_max": [
+        25.6,
+        32.2,
+        34.9
+      ],
+      "temperature_2m_min": [
+        11.8,
+        15.8,
+        19.3
+      ]
+    }
+  },
+  "IDX_1": {
+    "description": "Open-Meteo WMO condition codes and their descriptions in multiple languages.",
+    "data": {
+      "0": {
+        "description": {
+          "en": "Sunny",
+          "de": "Sonnig",
+          "es": "Soleado",
+          "fr": "Ensoleillé"
+        }
+      },
+      "1": {
+        "description": {
+          "en": "Mainly sunny",
+          "de": "Überwiegend sonnig",
+          "es": "Principalmente soleado",
+          "fr": "Principalement ensoleillé"
+        }
+      },
+      "2": {
+        "description": {
+          "en": "Partly cloudy",
+          "de": "Teilweise bewölkt",
+          "es": "Parcialmente nublado",
+          "fr": "Partiellement nuageux"
+        }
+      },
+      "3": {
+        "description": {
+          "en": "Overcast",
+          "de": "Bewölkt",
+          "es": "Nublado",
+          "fr": "Nuageux"
+        }
+      },
+      "45": {
+        "description": {
+          "en": "Fog",
+          "de": "Nebel",
+          "es": "Niebla",
+          "fr": "Brouillard"
+        }
+      },
+      "48": {
+        "description": {
+          "en": "Depositing rime fog",
+          "de": "Reifnebel",
+          "es": "Niebla con escarcha",
+          "fr": "Brouillard givrant"
+        }
+      },
+      "51": {
+        "description": {
+          "en": "Light drizzle",
+          "de": "Leichter Nieselregen",
+          "es": "Llovizna ligera",
+          "fr": "Bruine légère"
+        }
+      },
+      "53": {
+        "description": {
+          "en": "Moderate drizzle",
+          "de": "Mäßiger Nieselregen",
+          "es": "Llovizna moderada",
+          "fr": "Bruine modérée"
+        }
+      },
+      "55": {
+        "description": {
+          "en": "Dense drizzle",
+          "de": "Starker Nieselregen",
+          "es": "Llovizna densa",
+          "fr": "Bruine dense"
+        }
+      },
+      "56": {
+        "description": {
+          "en": "Light freezing drizzle",
+          "de": "Leichter gefrierender Nieselregen",
+          "es": "Llovizna helada ligera",
+          "fr": "Bruine verglaçante légère"
+        }
+      },
+      "57": {
+        "description": {
+          "en": "Dense freezing drizzle",
+          "de": "Starker gefrierender Nieselregen",
+          "es": "Llovizna helada densa",
+          "fr": "Bruine verglaçante dense"
+        }
+      },
+      "61": {
+        "description": {
+          "en": "Slight rain",
+          "de": "Leichter Regen",
+          "es": "Lluvia ligera",
+          "fr": "Pluie faible"
+        }
+      },
+      "63": {
+        "description": {
+          "en": "Moderate rain",
+          "de": "Mäßiger Regen",
+          "es": "Lluvia moderada",
+          "fr": "Pluie modérée"
+        }
+      },
+      "65": {
+        "description": {
+          "en": "Heavy rain",
+          "de": "Starker Regen",
+          "es": "Lluvia fuerte",
+          "fr": "Pluie forte"
+        }
+      },
+      "66": {
+        "description": {
+          "en": "Light freezing rain",
+          "de": "Leichter gefrierender Regen",
+          "es": "Lluvia helada ligera",
+          "fr": "Pluie verglaçante légère"
+        }
+      },
+      "67": {
+        "description": {
+          "en": "Heavy freezing rain",
+          "de": "Starker gefrierender Regen",
+          "es": "Lluvia helada fuerte",
+          "fr": "Pluie verglaçante forte"
+        }
+      },
+      "71": {
+        "description": {
+          "en": "Slight snow fall",
+          "de": "Leichter Schneefall",
+          "es": "Nevada ligera",
+          "fr": "Chute de neige faible"
+        }
+      },
+      "73": {
+        "description": {
+          "en": "Moderate snow fall",
+          "de": "Mäßiger Schneefall",
+          "es": "Nevada moderada",
+          "fr": "Chute de neige modérée"
+        }
+      },
+      "75": {
+        "description": {
+          "en": "Heavy snow fall",
+          "de": "Starker Schneefall",
+          "es": "Nevada fuerte",
+          "fr": "Chute de neige forte"
+        }
+      },
+      "77": {
+        "description": {
+          "en": "Snow grains",
+          "de": "Schneekörner",
+          "es": "Granos de nieve",
+          "fr": "Grains de neige"
+        }
+      },
+      "80": {
+        "description": {
+          "en": "Slight rain showers",
+          "de": "Leichte Regenschauer",
+          "es": "Chubascos ligeros",
+          "fr": "Averses de pluie faibles"
+        }
+      },
+      "81": {
+        "description": {
+          "en": "Moderate rain showers",
+          "de": "Mäßige Regenschauer",
+          "es": "Chubascos moderados",
+          "fr": "Averses de pluie modérées"
+        }
+      },
+      "82": {
+        "description": {
+          "en": "Violent rain showers",
+          "de": "Starke Regenschauer",
+          "es": "Chubascos violentos",
+          "fr": "Averses de pluie violentes"
+        }
+      },
+      "85": {
+        "description": {
+          "en": "Slight snow showers",
+          "de": "Leichte Schneeschauer",
+          "es": "Chubascos de nieve ligeros",
+          "fr": "Averses de neige faibles"
+        }
+      },
+      "86": {
+        "description": {
+          "en": "Heavy snow showers",
+          "de": "Starke Schneeschauer",
+          "es": "Chubascos de nieve fuertes",
+          "fr": "Averses de neige fortes"
+        }
+      },
+      "95": {
+        "description": {
+          "en": "Slight or moderate thunderstorm",
+          "de": "Leichter oder mäßiger Gewitter",
+          "es": "Tormenta ligera o moderada",
+          "fr": "Orage faible ou modéré"
+        }
+      },
+      "96": {
+        "description": {
+          "en": "Thunderstorm with slight hail",
+          "de": "Gewitter mit leichtem Hagel",
+          "es": "Tormenta con granizo ligero",
+          "fr": "Orage avec grêle faible"
+        }
+      },
+      "99": {
+        "description": {
+          "en": "Thunderstorm with heavy hail",
+          "de": "Gewitter mit starkem Hagel",
+          "es": "Tormenta con granizo fuerte",
+          "fr": "Orage avec forte grêle"
+        }
+      }
+    }
+  },
+  "IDX_2": {
+    "description": "Open-Meteo icons mapping for weather conditions",
+    "base_url": "https://andi4000.github.io/weather-icons/production/monochrome/svg-static/",
+    "icons": {
+      "0": {
+        "day": "clear-day.svg",
+        "night": "clear-night.svg"
+      },
+      "1": {
+        "day": "clear-day.svg",
+        "night": "clear-night.svg"
+      },
+      "2": {
+        "day": "partly-cloudy-day.svg",
+        "night": "partly-cloudy-night.svg"
+      },
+      "3": {
+        "day": "overcast-day.svg",
+        "night": "overcast-night.svg"
+      },
+      "45": {
+        "day": "fog-day.svg",
+        "night": "fog-night.svg"
+      },
+      "48": {
+        "day": "fog-day.svg",
+        "night": "fog-night.svg"
+      },
+      "51": {
+        "day": "overcast-day-drizzle.svg",
+        "night": "drizzle.svg"
+      },
+      "53": {
+        "day": "drizzle.svg",
+        "night": "drizzle.svg"
+      },
+      "55": {
+        "day": "drizzle.svg",
+        "night": "drizzle.svg"
+      },
+      "56": {
+        "day": "drizzle.svg",
+        "night": "drizzle.svg"
+      },
+      "57": {
+        "day": "drizzle.svg",
+        "night": "drizzle.svg"
+      },
+      "61": {
+        "day": "overcast-day-rain.svg",
+        "night": "overcast-night-rain.svg"
+      },
+      "63": {
+        "day": "rain.svg",
+        "night": "rain.svg"
+      },
+      "65": {
+        "day": "extreme-rain.svg",
+        "night": "extreme-rain.svg"
+      },
+      "66": {
+        "day": "rain.svg",
+        "night": "rain.svg"
+      },
+      "67": {
+        "day": "rain.svg",
+        "night": "rain.svg"
+      },
+      "71": {
+        "day": "partly-cloudy-day-snow.svg",
+        "night": "partly-cloudy-night-snow.svg"
+      },
+      "73": {
+        "day": "snow.svg",
+        "night": "snow.svg"
+      },
+      "75": {
+        "day": "extreme-snow.svg",
+        "night": "extreme-snow.svg"
+      },
+      "77": {
+        "day": "snow.svg",
+        "night": "snow.svg"
+      },
+      "80": {
+        "day": "partly-cloudy-day-rain.svg",
+        "night": "partly-cloudy-night-rain.svg"
+      },
+      "81": {
+        "day": "rain.svg",
+        "night": "rain.svg"
+      },
+      "82": {
+        "day": "extreme-rain.svg",
+        "night": "extreme-rain.svg"
+      },
+      "85": {
+        "day": "snow.svg",
+        "night": "snow.svg"
+      },
+      "86": {
+        "day": "snow.svg",
+        "night": "snow.svg"
+      },
+      "95": {
+        "day": "thunderstorms-day.svg",
+        "night": "thunderstorms-night.svg"
+      },
+      "96": {
+        "day": "thunderstorms-day.svg",
+        "night": "thunderstorms-night.svg"
+      },
+      "99": {
+        "day": "thunderstorms-day.svg",
+        "night": "thunderstorms-night.svg"
+      }
+    }
+  }
+}

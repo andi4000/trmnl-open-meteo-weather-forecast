@@ -1,0 +1,68 @@
+{% comment %}
+  This is mostly copy paste from half_horizontal.liquid, without the COL 2 today
+{% endcomment %}
+
+{% assign MAX_HOURS_DISPLAY_TODAY = 7 %}
+{% assign TOMORROW_DISPLAY_HOURS = '7,9,11,13,15,17,19' | split: ',' %}
+{% assign LANG = trmnl.plugin_settings.custom_fields_values.lang %}
+{% assign DATE_FMT_TODAY = trmnl.plugin_settings.custom_fields_values.date_format_today %}
+{% assign DATE_FMT_TOMORROW = trmnl.plugin_settings.custom_fields_values.date_format_tomorrow %}
+
+{% assign weather = IDX_0 %}
+{% assign descriptions = IDX_1.data %}
+{% assign icons = IDX_2.icons %}
+{% assign icons_base_url = IDX_2.base_url %}
+{% assign translations = IDX_3.translations %}
+
+{% assign code_str_current = weather.current.weather_code | append: '' %}
+
+{% assign icon_current = icons[code_str_current].night %}
+{% if weather.current.is_day == 1 %}
+  {% assign icon_current = icons[code_str_current].day %}
+{% endif %}
+
+{% assign code_str_today = weather.daily.weather_code[0] | append: '' %}
+{% assign icon_today = icons[code_str_today].day %}
+
+{% assign code_str_tomorrow = weather.daily.weather_code[1] | append: '' %}
+{% assign icon_tomorrow = icons[code_str_tomorrow].day %}
+
+<div class="layout layout--col gap--space-between">
+  <!-- ROW 1 current and today -->
+  <div class="grid">
+    <!-- COL 1 current -->
+    <div class="col col--span-2 col--start">
+      <div class="item h--full">
+        <div class="meta"></div>
+        <div class="grid grid--cols-1">
+          <span class="title">{{ translations.current[LANG] }} ({{ weather.current.time | date: '%H:%M' }})</span>
+          <div class="row row--start">
+            <div class="col col--center">
+              <img
+                style="width: 110px; height: 110px; margin-left: -5px;"
+                src="{{ icons_base_url | append: icon_current }}"
+              >
+            </div>
+            <div class="col col--center">
+              <span class="value value--large" data-value-fit="true">
+                {{- weather.current.temperature_2m | round }}°</span
+              >
+            </div>
+            <div class="col col--center"></div> <!-- empty column for alignment -->
+          </div>
+          <span
+            class="value"
+            data-value-fit="true"
+            data-value-fit-max-height="50"
+          >
+            {{- descriptions[code_str_current].description[LANG] -}}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+  <!-- grid end row 1 -->
+</div>
+<!-- layout end -->

@@ -1,0 +1,163 @@
+{% comment %}
+  This is mostly copy paste from half_horizontal.liquid
+{% endcomment %}
+
+{% assign MAX_HOURS_DISPLAY_TODAY = 5 %}
+{% assign TOMORROW_DISPLAY_HOURS = '7,9,11,13,15,17,19' | split: ',' %}
+{% assign LANG = trmnl.plugin_settings.custom_fields_values.lang %}
+{% assign DATE_FMT_TODAY = trmnl.plugin_settings.custom_fields_values.date_format_today %}
+{% assign DATE_FMT_TOMORROW = trmnl.plugin_settings.custom_fields_values.date_format_tomorrow %}
+
+{% assign weather = IDX_0 %}
+{% assign descriptions = IDX_1.data %}
+{% assign icons = IDX_2.icons %}
+{% assign icons_base_url = IDX_2.base_url %}
+{% assign translations = IDX_3.translations %}
+
+{% assign code_str_current = weather.current.weather_code | append: '' %}
+
+{% assign icon_current = icons[code_str_current].night %}
+{% if weather.current.is_day == 1 %}
+  {% assign icon_current = icons[code_str_current].day %}
+{% endif %}
+
+{% assign code_str_today = weather.daily.weather_code[0] | append: '' %}
+{% assign icon_today = icons[code_str_today].day %}
+
+{% assign code_str_tomorrow = weather.daily.weather_code[1] | append: '' %}
+{% assign icon_tomorrow = icons[code_str_tomorrow].day %}
+
+<div class="layout layout--col layout--stretch">
+  <!-- ROW 1 current -->
+  <div>
+    <div class="item h--full">
+      <div class="meta"></div>
+      <div class="grid grid--cols-1">
+        <span class="title">{{ translations.current[LANG] }} ({{ weather.current.time | date: '%H:%M' }})</span>
+        <div class="row row--start">
+          <div class="col col--center">
+            <img
+              style="width: 110px; height: 110px; margin-left: -5px;"
+              src="{{ icons_base_url | append: icon_current }}"
+            >
+          </div>
+          <div class="col col--center">
+            <span class="value value--large" data-value-fit="true">{{- weather.current.temperature_2m | round }}°</span>
+          </div>
+          <div class="col col--center"></div>
+          <!-- empty column for alignment -->
+        </div>
+        <span
+          class="value"
+          data-value-fit="true"
+          data-value-fit-max-height="50"
+        >
+          {{- descriptions[code_str_current].description[LANG] -}}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full b-h-gray-3"></div>
+  <!-- ROW 2 current -->
+  <div>
+    <div class="item h--full">
+      <div class="meta"></div>
+      <div class="grid grid--cols-1">
+        <span class="title">
+          {{- translations.today[LANG] }} &mdash; {{ weather.daily.time[0] | l_date: DATE_FMT_TODAY, LANG -}}
+        </span>
+        <div class="grid">
+          <div class="grid grid--cols-2">
+            <div class="col col--center">
+              <img
+                style="width: 75px; height: 75px;"
+                src="{{ icons_base_url | append: icon_today }}"
+              >
+            </div>
+            <div class="col col--center" style="margin-left: 1em;">
+              <span class="value value--small">{{ weather.daily.temperature_2m_max[0] | round }}°</span>
+              <span class="value value--small text--gray-2">{{ weather.daily.temperature_2m_min[0] | round }}°</span>
+            </div>
+          </div>
+          <div class="col--span-2">
+            <div class="col col--center">
+              <div class="item">
+                <div class="content" style="margin-left: 0.5em;">
+                  <span
+                    class="value"
+                    data-value-fit="true"
+                    data-value-fit-max-height="60"
+                  >
+                    {{- descriptions[code_str_today].description[LANG] -}}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- col span 3 end -->
+        </div>
+        <!-- grid heute info end -->
+
+        <div class="w-full b-h-gray-3"></div>
+
+        {% assign epoch_current = weather.current.time | date: '%s' %}
+
+        {% assign hourly_indexes = '' %}
+        {% assign tmp_count = 0 %}
+        {% for time in weather.hourly.time %}
+          {% assign time_epoch = time | date: '%s' %}
+          {% if time_epoch > epoch_current and tmp_count < MAX_HOURS_DISPLAY_TODAY %}
+            {% assign hourly_indexes = hourly_indexes | append: forloop.index0 | append: ',' %}
+            {% assign tmp_count = tmp_count | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+        {% assign hourly_indexes = hourly_indexes | remove_last: ',' | split: ',' %}
+
+        {% assign current_date = weather.current.time | date: '%Y%m%d' %}
+
+        <div class="grid grid--cols-{{ MAX_HOURS_DISPLAY_TODAY }}">
+          <!-- loop element start -->
+          {% for idx_str in hourly_indexes %}
+            {% assign idx = idx_str | plus: 0 %}
+
+            {% assign code_str_hour = weather.hourly.weather_code[idx] | append: '' %}
+            {% assign icon_hour = icons[code_str_hour].night %}
+            {% if weather.hourly.is_day[idx] == 1 %}
+              {% assign icon_hour = icons[code_str_hour].day %}
+            {% endif %}
+
+            {% assign style_hour = '' %}
+            {% assign hour_date = weather.hourly.time[idx] | date: '%Y%m%d' %}
+            {% if hour_date != current_date %}
+              {% assign style_hour = 'font-style: italic;' %}
+            {% endif %}
+
+            <div class="col col--start">
+              <div class="row row--center">
+                <span class="value value--xxsmall" style="{{ style_hour }}">
+                  {{- weather.hourly.time[idx] | date: '%H' -}}
+                </span>
+              </div>
+              <div class="row row--center">
+                <img
+                  style="width: 50px; height: 50px;"
+                  src="{{ icons_base_url | append: icon_hour }}"
+                >
+              </div>
+              <div class="row row--center">
+                <span class="value value--xxsmall" style="margin-left: 0.5em">
+                  {{- weather.hourly.temperature_2m[idx] | round }}°</span
+                >
+              </div>
+            </div>
+          {% endfor %}
+          <!-- loop element end -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- grid end row 1 -->
+</div>
+<!-- layout end -->
