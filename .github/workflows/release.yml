@@ -1,0 +1,30 @@
+name: Release Plugin
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+env:
+  PLUGIN_NAME: TRMNL-Plugin-Open-Meteo-Weather-Forecast
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install zip
+        run: sudo apt-get update && sudo apt-get install -y zip
+
+      - name: Set release filename
+        run: echo "ZIP_FILE=${{ env.PLUGIN_NAME }}-${GITHUB_REF_NAME}.zip" >> $GITHUB_ENV
+
+      - name: Preparing plugin files
+        run: cd src && zip -r ../${{ env.ZIP_FILE }} .
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ env.ZIP_FILE }}
