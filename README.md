@@ -13,16 +13,19 @@ The first draft was generated with AI help, so it might not be 100% accurate. PR
 ## Other Formats
 <details>
 <summary>Half Horizontal</summary>
+
 ![half horizontal](assets/preview_half_horizontal.png)
 </details>
 
 <details>
 <summary>Half Vertical</summary>
+
 ![half vertical](assets/preview_half_vertical.png)
 </details>
 
 <details>
 <summary>Quadrant</summary>
+
 ![quadrant](assets/preview_quadrant.png)
 </details>
 
