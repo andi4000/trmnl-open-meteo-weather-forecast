@@ -67,7 +67,7 @@ custom_fields:
   name: Date Format Today
   description: Format for today's date in strftime format
   help_text: See <a href="https://strftime.net/" class="underline">strftime.net</a> for details
-  default: "%A, den %d.%m.%Y"
+  default: "%A, %d.%m.%Y"
 - keyname: date_format_tomorrow
   field_type: string
   name: Date Format Tomorrow

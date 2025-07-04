@@ -12,7 +12,7 @@ watch:
 custom_fields:
   lang: "de"
   unit_temperature: "celcius"
-  date_format_today: "%A, den %d.%m.%Y"
+  date_format_today: "%A, %d.%m.%Y"
   date_format_tomorrow: "%A"
   lat: "54"
   lon: "14"
