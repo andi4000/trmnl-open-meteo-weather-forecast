@@ -60,10 +60,17 @@ custom_fields:
 - keyname: disp_full_today_max_hours
   field_type: number
   name: "Full Display: Today's Max Hours"
-  description: Number of hours to display for today's max temperature
+  description: Number of hours to display for today's hourly temperature, counting from current hour
   help_text: Valid for Full and Half Horizontal Display modes
   optional: false
   default: 7
+- keyname: disp_full_tomorrow_hours
+  field_type: string
+  name: "Full Display: Tomorrow's Hours"
+  description: Comma-separated list of hours to display for tomorrow
+  help_text: Valid for Full and Half Horizontal Display modes
+  optional: false
+  default: "7,9,11,13,15,17,19"
 - keyname: disp_half_vertical_today_max_hours
   field_type: number
   name: "Half Vertical Display: Today's Max Hours"
