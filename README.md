@@ -56,6 +56,13 @@ Requires docker.
 
 ```bash
 cp .trmnlp.yml.sample .trmnlp.yml
-# edit the file accordingly
+# edit the file accordingly, then
+
 ./bin/trmnlp
+```
+
+### Release
+```bash
+# (lightweight) tag the repo and push it, using this wrapper script. GH Action will create a release.
+./bin/bumpversion minor  # major,minor,patch
 ```
