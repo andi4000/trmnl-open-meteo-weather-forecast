@@ -34,6 +34,7 @@ The first draft was generated with AI help, so it might not be 100% accurate. PR
 1. Import zip file into your TRMNL Private Plugin (Plugins > Private Plugin > Import New)
 1. Enter the Latitude and Longitude of your location
 1. Configure other fields as needed
+1. **NOTE**: if you see "Liquid error" messages on display, it is because TRMNL server hasn't fetched the weather data yet. Wait a few minutes or force update via link on the sidebar.
 1. ?
 1. Profit
 
