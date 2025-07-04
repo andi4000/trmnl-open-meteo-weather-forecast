@@ -53,3 +53,8 @@ custom_fields:
   description: Format for tomorrow's date in strftime format
   help_text: See https://strftime.net/ for details
   default: "%A"
+- keyname: fubar
+  name: About This Plugin
+  field_type: author_bio
+  description: Hourly weather forecast plugin with Open-Meteo Backend. No API key required.
+  github_url: https://github.com/andi4000/trmnl-open-meteo-weather-forecast
