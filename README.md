@@ -40,6 +40,17 @@ The first draft was generated with AI help, so it might not be 100% accurate. PR
 1. ?
 1. Profit
 
+## Known Issues
+#### Weather icon, i.e. `weather_code` for daily forecast (today and tomorrow) is wild
+> Is there a special reason behind showing the worst case weathercode in daily values?
+
+> Well... simplicity ;-) It also has more issues like precipitation at night and sunny throughout the day.
+
+Upstream issue: open-meteo/open-meteo#228
+
+Ideas for a fix: #1
+
+
 ## Development
 Requires docker.
 
