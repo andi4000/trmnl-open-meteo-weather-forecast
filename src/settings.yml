@@ -45,13 +45,13 @@ custom_fields:
   field_type: string
   name: Date Format Today
   description: Format for today's date in strftime format
-  help_text: See https://strftime.net/ for details
+  help_text: See <a href="https://strftime.net/" class="underline">strftime.net</a> for details
   default: "%A, den %d.%m.%Y"
 - keyname: date_format_tomorrow
   field_type: string
   name: Date Format Tomorrow
   description: Format for tomorrow's date in strftime format
-  help_text: See https://strftime.net/ for details
+  help_text: See <a href="https://strftime.net/" class="underline">strftime.net</a> for details
   default: "%A"
 - keyname: fubar
   name: About This Plugin
