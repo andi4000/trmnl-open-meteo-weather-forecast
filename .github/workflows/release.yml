@@ -23,6 +23,10 @@ jobs:
       - name: Set release filename
         run: echo "ZIP_FILE=${{ env.PLUGIN_NAME }}-${GITHUB_REF_NAME}.zip" >> $GITHUB_ENV
 
+      - name: Inject version string into plugin name
+        run: |
+          sed -i "s/^name: \(.*\)$/name: \1 v${{ github.ref_name }}/" src/settings.yml
+
       - name: Preparing plugin files
         run: cd src && zip -r ../${{ env.ZIP_FILE }} .
 
