@@ -1,4 +1,4 @@
-# Open-Meteo Weather Forecast TRMNL Plugin
+# Open-Meteo Hourly Weather Forecast TRMNL Plugin
 
 ![preview full](assets/preview_full.png)
 

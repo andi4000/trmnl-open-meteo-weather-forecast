@@ -4,7 +4,7 @@
 # Docs: https://help.usetrmnl.com/en/articles/10542599-importing-and-exporting-private-plugins#h_581fb988f0
 #
 ---
-name: Open-Meteo Weather Forecast
+name: Open-Meteo Hourly Weather Forecast
 no_screen_padding: 'no'
 dark_mode: 'no'
 static_data: ''
