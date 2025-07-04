@@ -2,7 +2,7 @@
 set -e
 
 usage() {
-  echo "Usage: $0 [major|minor|patch] [--push] [--dry-run]"
+  echo "Usage: $0 [major|minor|patch] [--push]"
   exit 1
 }
 
@@ -73,6 +73,7 @@ if $PUSH; then
 else
   echo "[DRY RUN] Would create tag $NEW_TAG"
   echo "[DRY RUN] Would push tag $NEW_TAG to origin"
+  echo ""
   echo "Exiting without making changes, run with --push to tag and push"
   exit 0
 fi
