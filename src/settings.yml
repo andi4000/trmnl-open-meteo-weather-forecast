@@ -57,6 +57,20 @@ custom_fields:
   options:
   - Celsius: celsius
   - Fahrenheit: fahrenheit
+- keyname: disp_full_today_max_hours
+  field_type: number
+  name: "Full Display: Today's Max Hours"
+  description: Number of hours to display for today's max temperature
+  help_text: Valid for Full and Half Horizontal Display modes
+  optional: false
+  default: 7
+- keyname: disp_half_vertical_today_max_hours
+  field_type: number
+  name: "Half Vertical Display: Today's Max Hours"
+  description: Number of hours to display for today's max temperature
+  help_text: Valid for Half Vertical Display mode
+  optional: false
+  default: 5
 - keyname: date_format_today
   field_type: string
   name: Date Format Today

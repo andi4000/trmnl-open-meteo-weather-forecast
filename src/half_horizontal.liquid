@@ -2,7 +2,7 @@
   This is mostly copy paste from full.liquid, without the ROW 2
 {% endcomment %}
 
-{% assign MAX_HOURS_DISPLAY_TODAY = 7 %}
+{% assign MAX_HOURS_DISPLAY_TODAY = trmnl.plugin_settings.custom_fields_values.disp_full_today_max_hours %}
 {% assign TOMORROW_DISPLAY_HOURS = '7,9,11,13,15,17,19' | split: ',' %}
 {% assign LANG = trmnl.plugin_settings.custom_fields_values.lang %}
 {% assign DATE_FMT_TODAY = trmnl.plugin_settings.custom_fields_values.date_format_today %}
