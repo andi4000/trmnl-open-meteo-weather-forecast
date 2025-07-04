@@ -6,6 +6,8 @@ Inspired by the stock Weather App on IOS. Using Open-Meteo backend, no API key n
 Using [beautiful SVG icons by basmilius](https://github.com/basmilius/weather-icons), forked and
 then hosted on GitHub Pages [here](https://github.com/andi4000/weather-icons).
 
+Open-Meteo API Documentation: https://open-meteo.com/en/docs
+
 Mapping between (WMO) weather code to icon and multi-language description is provided by this
 GitHub project: https://github.com/andi4000/weather-app-assets
 The first draft was generated with AI help, so it might not be 100% accurate. PRs are welcome :)
