@@ -48,7 +48,7 @@ The first draft was generated with AI help, so it might not be 100% accurate. PR
 
 Upstream issue: open-meteo/open-meteo#228
 
-Ideas for a fix: #1
+Ideas for a fix: andi4000/trmnl-open-meteo-weather-forecast#1
 
 
 ## Development
