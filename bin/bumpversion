@@ -26,6 +26,18 @@ for arg in "$@"; do
   esac
 done
 
+# Check for uncommitted changes
+if [[ -n $(git status --porcelain) ]]; then
+  echo "Error: You have uncommitted changes. Please commit or stash them before bumping the version."
+  exit 1
+fi
+
+# Check for unpushed commits
+if [[ -n $(git log --branches --not --remotes) ]]; then
+  echo "Error: You have local commits that are not pushed to the remote. Please push them before bumping the version."
+  exit 1
+fi
+
 # Get latest lightweight semver tag (no annotated tags)
 LATEST_TAG=$(git tag --list --sort=-v:refname | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$' | head -n1)
 if [[ -z "$LATEST_TAG" ]]; then
