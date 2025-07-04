@@ -32,7 +32,8 @@ The first draft was generated with AI help, so it might not be 100% accurate. PR
 ## Usage
 1. Download plugin zip file from [latest release](/releases/latest)
 1. Import zip file into your TRMNL Private Plugin (Plugins > Private Plugin > Import New)
-1. Enter the Latitude and Longitude of your location, then save
+1. Enter the Latitude and Longitude of your location
+1. Configure other fields as needed
 1. ?
 1. Profit
 
