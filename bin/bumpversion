@@ -1,0 +1,76 @@
+#!/usr/bin/env bash
+set -e
+
+usage() {
+  echo "Usage: $0 [major|minor|patch] [--push] [--dry-run]"
+  exit 1
+}
+
+if [[ $# -lt 1 ]]; then
+  usage
+fi
+
+BUMP_TYPE="$1"
+shift
+PUSH=false
+DRY_RUN=false
+
+# Parse additional flags
+for arg in "$@"; do
+  case $arg in
+    --push)
+      PUSH=true
+      ;;
+    --dry-run)
+      DRY_RUN=true
+      ;;
+    *)
+      # Ignore unknown args for now
+      ;;
+  esac
+done
+
+# Get latest lightweight semver tag (no annotated tags)
+LATEST_TAG=$(git tag --list --sort=-v:refname | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$' | head -n1)
+if [[ -z "$LATEST_TAG" ]]; then
+  echo "No semver tag found. Starting from 0.0.0"
+  LATEST_TAG="0.0.0"
+fi
+
+IFS='.' read -r MAJOR MINOR PATCH <<< "$LATEST_TAG"
+
+case "$BUMP_TYPE" in
+  major)
+    ((MAJOR++)) || true; MINOR=0; PATCH=0
+    ;;
+  minor)
+    ((MINOR++)) || true; PATCH=0
+    ;;
+  patch)
+    ((PATCH++)) || true
+    ;;
+  *)
+    usage
+    ;;
+esac
+
+echo "Latest tag found: $LATEST_TAG"
+
+NEW_TAG="$MAJOR.$MINOR.$PATCH"
+echo "Bumping version: $LATEST_TAG -> $NEW_TAG"
+
+if $DRY_RUN; then
+  echo "[DRY RUN] Would create tag $NEW_TAG"
+  if $PUSH; then
+    echo "[DRY RUN] Would push tag $NEW_TAG to origin"
+  fi
+  exit 0
+fi
+
+git tag "$NEW_TAG"
+echo "Created tag $NEW_TAG"
+
+if $PUSH; then
+  git push origin "$NEW_TAG"
+  echo "Pushed tag $NEW_TAG to origin"
+fi
