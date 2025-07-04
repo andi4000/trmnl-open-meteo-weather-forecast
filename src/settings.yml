@@ -1,7 +1,9 @@
 #
 # Changes to this file will be overwritten by `trmnlp pull`.
 #
-# Docs: https://help.usetrmnl.com/en/articles/10542599-importing-and-exporting-private-plugins#h_581fb988f0
+# Docs:
+# - https://help.usetrmnl.com/en/articles/10542599-importing-and-exporting-private-plugins#h_581fb988f0
+# - https://intercom.help/trmnl/en/articles/10513740-custom-plugin-form-builder
 #
 ---
 name: Open-Meteo Hourly Weather Forecast
