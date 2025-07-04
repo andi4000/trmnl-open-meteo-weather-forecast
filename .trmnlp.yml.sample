@@ -16,9 +16,9 @@ custom_fields:
   date_format_tomorrow: "%A"
   lat: "54"
   lon: "14"
-  disp_full_today_max_hours: 7
+  disp_full_today_max_hours: "7"
   disp_full_tomorrow_hours: "7,9,11,13,15,17,19"
-  disp_half_vertical_today_max_hours: 5
+  disp_half_vertical_today_max_hours: "5"
 
 # override variables
 variables:

@@ -1,4 +1,4 @@
-{% assign MAX_HOURS_DISPLAY_TODAY = trmnl.plugin_settings.custom_fields_values.disp_full_today_max_hours %}
+{% assign MAX_HOURS_DISPLAY_TODAY = trmnl.plugin_settings.custom_fields_values.disp_full_today_max_hours | plus: 0 %}
 {% assign TOMORROW_DISPLAY_HOURS = trmnl.plugin_settings.custom_fields_values.disp_full_tomorrow_hours | split: ',' %}
 {% assign LANG = trmnl.plugin_settings.custom_fields_values.lang %}
 {% assign DATE_FMT_TODAY = trmnl.plugin_settings.custom_fields_values.date_format_today %}
