@@ -12,7 +12,7 @@ jobs:
       - uses: ruby/setup-ruby@v1
 
       - name: Install trmnlp
-        run: gem install tmnl_preview
+        run: gem install trmnl_preview
 
       - name: Print trmnlp version
         run: trmnlp version
