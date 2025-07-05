@@ -1,0 +1,18 @@
+name: Ruby Playground
+
+on:
+  workflow_dispatch:
+
+jobs:
+  setup-and-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Should read .ruby-version file
+      - uses: ruby/setup-ruby@v1
+
+      - name: Install trmnlp
+        run: gem install tmnl_preview
+
+      - name: Print trmnlp version
+        run: trmnlp version
