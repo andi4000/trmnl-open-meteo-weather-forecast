@@ -47,24 +47,13 @@ Will soon be available as Recipe!
 1. Profit
 </details>
 
-## Known Issues
-#### Weather icon, i.e. `weather_code` for daily forecast (today and tomorrow) is wild
-> Is there a special reason behind showing the worst case weathercode in daily values?
-
-> Well... simplicity ;-) It also has more issues like precipitation at night and sunny throughout the day.
-
-Upstream issue: open-meteo/open-meteo#228
-
-Ideas for a fix: andi4000/trmnl-open-meteo-weather-forecast#1
-
-
 ## Development
 Requires docker.
 
 ```bash
 cp .trmnlp.yml.sample .trmnlp.yml
-# edit the file accordingly, then
-
+# edit the file accordingly
+# then execute this to run development server
 ./bin/trmnlp
 ```
 

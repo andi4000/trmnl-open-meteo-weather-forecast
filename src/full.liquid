@@ -18,6 +18,8 @@
   {% assign icon_current = icons[code_str_current].day %}
 {% endif %}
 
+{% assign current_date = weather.current.time | date: '%Y%m%d' %}
+
 {% # TODAY # %}
 {% # build array of indices for today's hours %}
 {% assign epoch_current = weather.current.time | date: '%s' %}
@@ -33,9 +35,21 @@
 {% endfor %}
 {% assign today_hourly_indices = today_hourly_indices | remove_last: ',' | split: ',' %}
 
-{% assign current_date = weather.current.time | date: '%Y%m%d' %}
+{% # More representative today's icon, instead of the worst weather code of 24h %}
+{% assign today_weather_codes = '' %}
+{% for idx_str in today_hourly_indices %}
+  {% assign idx = idx_str | plus: 0 %}
+  {% assign elem = weather.hourly.weather_code[idx] | append: '' %}
+  {% assign today_weather_codes = today_weather_codes | append: elem | append: ',' %}
+{% endfor %}
+{% assign today_weather_codes = today_weather_codes | remove_last: ',' | split: ',' %}
+{% assign worst_weather_today = today_weather_codes | sort | last %}
 
-{% assign code_str_today = weather.daily.weather_code[0] | append: '' %}
+{% comment %}
+   {% # See https://github.com/open-meteo/open-meteo/issues/228  %}
+  {% assign code_str_today = weather.daily.weather_code[0] | append: '' %}
+{% endcomment %}
+{% assign code_str_today = worst_weather_today | append: '' %}
 {% assign icon_today = icons[code_str_today].day %}
 
 {% # TOMORROW # %}
@@ -61,11 +75,26 @@
 {% endfor %}
 {% assign tomorrow_hourly_indices = tomorrow_hourly_indices | remove_last: ',' | split: ',' %}
 
-{% assign code_str_tomorrow = weather.daily.weather_code[1] | append: '' %}
+{% # More representative tomorrow's icon, instead of the worst weather in 24h %}
+{% assign tomorrow_hourly_range_min = tomorrow_hourly_indices | first %}
+{% assign tomorrow_hourly_range_max = tomorrow_hourly_indices | last %}
+{% assign tomorrow_hourly_range = (tomorrow_hourly_range_min..tomorrow_hourly_range_max) %}
+{% assign tomorrow_weather_codes = '' %}
+{% for idx_str in tomorrow_hourly_indices %}
+  {% assign idx = idx_str | plus: 0 %}
+  {% assign elem = weather.hourly.weather_code[idx] | append: '' %}
+  {% assign tomorrow_weather_codes = tomorrow_weather_codes | append: elem | append: ',' %}
+{% endfor %}
+{% assign tomorrow_weather_codes = tomorrow_weather_codes | remove_last: ',' | split: ',' %}
+{% assign worst_weather_tomorrow = tomorrow_weather_codes | sort | last %}
+
+{% comment %}
+  {% assign code_str_tomorrow = weather.daily.weather_code[1] | append: '' %}
+{% endcomment %}
+{% assign code_str_tomorrow = worst_weather_tomorrow | append: '' %}
 {% assign icon_tomorrow = icons[code_str_tomorrow].day %}
 
 {% # LAYOUT # %}
-
 <div class="layout layout--col gap--space-between">
   <!-- ROW 1 current and today -->
   <div class="grid">
