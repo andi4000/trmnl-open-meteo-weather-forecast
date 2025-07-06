@@ -21,7 +21,7 @@ custom_fields:
   field_type: author_bio
   description: >
     Hourly weather forecast plugin with Open-Meteo Backend. No API key required.
-    Click save right after plugin import, to populate the required fields to fetch the weather data.
+    <br>NOTE: Click save right after plugin import, to populate the required fields to fetch the weather data.
     Otherwise you will get "Liquid error" messages.
   github_url: https://github.com/andi4000/trmnl-open-meteo-weather-forecast
 - keyname: lat
