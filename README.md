@@ -74,6 +74,6 @@ cp .trmnlp.yml.sample .trmnlp.yml
 ./bin/bumpversion minor  # major,minor,patch
 ```
 
-## Acknowledgement
-- @usetrmnl for the great product! I've been thinking of building one myself from scratch, but never had the time. Definitely not an impulse purchase but it's worth it!
-- usetrmnl/trmnlp for great software that makes it easy to develop plugin locally!
+## Acknowledgements
+- [@usetrmnl](https://github.com/usetrmnl) for the great product! I've been thinking of building one myself from scratch, but never had the time. Definitely not an impulse purchase but it's worth it!
+- [usetrmnl/trmnlp](https://github.com/usetrmnl/trmnlp) for great software that makes it easy to develop plugin locally!
