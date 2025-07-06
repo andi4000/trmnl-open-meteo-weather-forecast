@@ -14,6 +14,7 @@
 {% assign icons_base_url = IDX_2.base_url %}
 {% assign translations = IDX_3.translations %}
 
+{% # CURRENT # %}
 {% assign code_str_current = weather.current.weather_code | append: '' %}
 
 {% assign icon_current = icons[code_str_current].night %}
@@ -21,12 +22,31 @@
   {% assign icon_current = icons[code_str_current].day %}
 {% endif %}
 
+{% # TODAY # %}
+{% # build array of indices for today's hours %}
+{% assign epoch_current = weather.current.time | date: '%s' %}
+
+{% assign today_hourly_indices = '' %}
+{% assign tmp_count = 0 %}
+{% for time in weather.hourly.time %}
+  {% assign time_epoch = time | date: '%s' %}
+  {% if time_epoch > epoch_current and tmp_count < MAX_HOURS_DISPLAY_TODAY %}
+    {% assign today_hourly_indices = today_hourly_indices | append: forloop.index0 | append: ',' %}
+    {% assign tmp_count = tmp_count | plus: 1 %}
+  {% endif %}
+{% endfor %}
+{% assign today_hourly_indices = today_hourly_indices | remove_last: ',' | split: ',' %}
+
+{% assign current_date = weather.current.time | date: '%Y%m%d' %}
+
 {% assign code_str_today = weather.daily.weather_code[0] | append: '' %}
 {% assign icon_today = icons[code_str_today].day %}
 
+{% # TOMORROW # %}
 {% assign code_str_tomorrow = weather.daily.weather_code[1] | append: '' %}
 {% assign icon_tomorrow = icons[code_str_tomorrow].day %}
 
+{% # LAYOUT # %}
 <div class="layout layout--col gap--space-between">
   <!-- ROW 1 current and today -->
   <div class="grid">
@@ -59,7 +79,6 @@
         </div>
       </div>
     </div>
-
 
     <!-- COL 2 today -->
     <div class="col col--span-4 col--start">
@@ -103,24 +122,9 @@
 
           <div class="w-full b-h-gray-3"></div>
 
-          {% assign epoch_current = weather.current.time | date: '%s' %}
-
-          {% assign hourly_indexes = '' %}
-          {% assign tmp_count = 0 %}
-          {% for time in weather.hourly.time %}
-            {% assign time_epoch = time | date: '%s' %}
-            {% if time_epoch > epoch_current and tmp_count < MAX_HOURS_DISPLAY_TODAY %}
-              {% assign hourly_indexes = hourly_indexes | append: forloop.index0 | append: ',' %}
-              {% assign tmp_count = tmp_count | plus: 1 %}
-            {% endif %}
-          {% endfor %}
-          {% assign hourly_indexes = hourly_indexes | remove_last: ',' | split: ',' %}
-
-          {% assign current_date = weather.current.time | date: '%Y%m%d' %}
-
           <div class="grid grid--cols-{{ MAX_HOURS_DISPLAY_TODAY }}">
             <!-- loop element start -->
-            {% for idx_str in hourly_indexes %}
+            {% for idx_str in today_hourly_indices %}
               {% assign idx = idx_str | plus: 0 %}
 
               {% assign code_str_hour = weather.hourly.weather_code[idx] | append: '' %}

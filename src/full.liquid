@@ -10,6 +10,7 @@
 {% assign icons_base_url = IDX_2.base_url %}
 {% assign translations = IDX_3.translations %}
 
+{% # CURRENT # %}
 {% assign code_str_current = weather.current.weather_code | append: '' %}
 
 {% assign icon_current = icons[code_str_current].night %}
@@ -17,11 +18,53 @@
   {% assign icon_current = icons[code_str_current].day %}
 {% endif %}
 
+{% # TODAY # %}
+{% # build array of indices for today's hours %}
+{% assign epoch_current = weather.current.time | date: '%s' %}
+
+{% assign today_hourly_indices = '' %}
+{% assign tmp_count = 0 %}
+{% for time in weather.hourly.time %}
+  {% assign time_epoch = time | date: '%s' %}
+  {% if time_epoch > epoch_current and tmp_count < MAX_HOURS_DISPLAY_TODAY %}
+    {% assign today_hourly_indices = today_hourly_indices | append: forloop.index0 | append: ',' %}
+    {% assign tmp_count = tmp_count | plus: 1 %}
+  {% endif %}
+{% endfor %}
+{% assign today_hourly_indices = today_hourly_indices | remove_last: ',' | split: ',' %}
+
+{% assign current_date = weather.current.time | date: '%Y%m%d' %}
+
 {% assign code_str_today = weather.daily.weather_code[0] | append: '' %}
 {% assign icon_today = icons[code_str_today].day %}
 
+{% # TOMORROW # %}
+{% # build array of indices for tomorrow's hours %}
+{% assign date_tomorrow = weather.daily.time[1] %}
+
+{% # nested loop to find indices in the weather data json %}
+{% assign tomorrow_hourly_indices = '' %}
+{% for hour in TOMORROW_DISPLAY_HOURS %}
+  {% assign hour_str = hour | prepend: '0' | slice: -2, 2 %}
+  {% assign target_time = date_tomorrow | append: 'T' | append: hour_str | append: ':00' %}
+
+  {% assign idx = -1 %}
+  {% for t in weather.hourly.time %}
+    {% if t == target_time %}
+      {% assign idx = forloop.index0 %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  {% if idx != -1 %}
+    {% assign tomorrow_hourly_indices = tomorrow_hourly_indices | append: idx | append: ',' %}
+  {% endif %}
+{% endfor %}
+{% assign tomorrow_hourly_indices = tomorrow_hourly_indices | remove_last: ',' | split: ',' %}
+
 {% assign code_str_tomorrow = weather.daily.weather_code[1] | append: '' %}
 {% assign icon_tomorrow = icons[code_str_tomorrow].day %}
+
+{% # LAYOUT # %}
 
 <div class="layout layout--col gap--space-between">
   <!-- ROW 1 current and today -->
@@ -98,24 +141,9 @@
 
           <div class="w-full b-h-gray-3"></div>
 
-          {% assign epoch_current = weather.current.time | date: '%s' %}
-
-          {% assign hourly_indexes = '' %}
-          {% assign tmp_count = 0 %}
-          {% for time in weather.hourly.time %}
-            {% assign time_epoch = time | date: '%s' %}
-            {% if time_epoch > epoch_current and tmp_count < MAX_HOURS_DISPLAY_TODAY %}
-              {% assign hourly_indexes = hourly_indexes | append: forloop.index0 | append: ',' %}
-              {% assign tmp_count = tmp_count | plus: 1 %}
-            {% endif %}
-          {% endfor %}
-          {% assign hourly_indexes = hourly_indexes | remove_last: ',' | split: ',' %}
-
-          {% assign current_date = weather.current.time | date: '%Y%m%d' %}
-
           <div class="grid grid--cols-{{ MAX_HOURS_DISPLAY_TODAY }}">
             <!-- loop element start -->
-            {% for idx_str in hourly_indexes %}
+            {% for idx_str in today_hourly_indices %}
               {% assign idx = idx_str | plus: 0 %}
 
               {% assign code_str_hour = weather.hourly.weather_code[idx] | append: '' %}
@@ -193,31 +221,9 @@
           <div class="col col--start col--span-4">
             <div class="item h--full" style="margin-top: 0.4em;">
               <div class="meta"></div>
-
-              {% assign date_tomorrow = weather.daily.time[1] %}
-
-              {% # nested loop to find indices in the weather data json %}
-              {% assign tomorrow_hourly_indexes = '' %}
-              {% for hour in TOMORROW_DISPLAY_HOURS %}
-                {% assign hour_str = hour | prepend: '0' | slice: -2, 2 %}
-                {% assign target_time = date_tomorrow | append: 'T' | append: hour_str | append: ':00' %}
-
-                {% assign idx = -1 %}
-                {% for t in weather.hourly.time %}
-                  {% if t == target_time %}
-                    {% assign idx = forloop.index0 %}
-                    {% break %}
-                  {% endif %}
-                {% endfor %}
-                {% if idx != -1 %}
-                  {% assign tomorrow_hourly_indexes = tomorrow_hourly_indexes | append: idx | append: ',' %}
-                {% endif %}
-              {% endfor %}
-              {% assign tomorrow_hourly_indexes = tomorrow_hourly_indexes | remove_last: ',' | split: ',' %}
-
               <div class="grid grid--cols-{{ TOMORROW_DISPLAY_HOURS | size }}">
                 <!-- loop element start -->
-                {% for idx_str in tomorrow_hourly_indexes %}
+                {% for idx_str in tomorrow_hourly_indices %}
                   {% assign idx = idx_str | plus: 0 %}
 
                   {% assign code_str_hour = weather.hourly.weather_code[idx] | append: '' %}
