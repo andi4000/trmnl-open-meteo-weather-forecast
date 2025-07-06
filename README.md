@@ -69,7 +69,9 @@ cp .trmnlp.yml.sample .trmnlp.yml
 ```
 
 ### Release
-Commits should conform to [Conventional Commits](https://www.conventionalcommits.org). GitHub Action will automatically create Release PR, changelog, and bump version accordingly.
+Commits should conform to [Conventional Commits](https://www.conventionalcommits.org). 
+GitHub Action will automatically create Release PR, changelog, and bump version accordingly.
+When release is ready, simply merge the PR.
 
 ## Acknowledgements
 - [@usetrmnl](https://github.com/usetrmnl) for the great product! I've been thinking of building one myself from scratch, but never had the time. Definitely not an impulse purchase but it's worth it!
