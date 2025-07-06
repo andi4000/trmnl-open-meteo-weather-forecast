@@ -69,10 +69,7 @@ cp .trmnlp.yml.sample .trmnlp.yml
 ```
 
 ### Release
-```bash
-# (lightweight) tag the repo and push it, using this wrapper script. GH Action will create a release.
-./bin/bumpversion minor  # major,minor,patch
-```
+Commits should conform to [Conventional Commits](https://www.conventionalcommits.org). GitHub Action will automatically create Release PR, changelog, and bump version accordingly.
 
 ## Acknowledgements
 - [@usetrmnl](https://github.com/usetrmnl) for the great product! I've been thinking of building one myself from scratch, but never had the time. Definitely not an impulse purchase but it's worth it!
