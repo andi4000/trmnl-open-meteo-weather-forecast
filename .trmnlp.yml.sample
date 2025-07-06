@@ -22,6 +22,4 @@ custom_fields:
 
 # override variables
 variables:
-  trmnl: {
-    "hello": "world",
-  }
+  trmnl: {}
