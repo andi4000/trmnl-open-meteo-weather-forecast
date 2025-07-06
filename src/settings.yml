@@ -45,7 +45,7 @@ custom_fields:
   name: Language
   description: Display language
   optional: false
-  default: de
+  default: en
   options:
   - English: en
   - German: de
