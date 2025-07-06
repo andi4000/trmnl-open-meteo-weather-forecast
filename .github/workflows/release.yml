@@ -44,7 +44,7 @@ jobs:
 
       - name: Inject version string into plugin name
         run: |
-          sed -i "s/^name: \(.*\)$/name: \1 v${{ env.TAG_NAME }}/" src/settings.yml
+          sed -i "s/^name: \(.*\)$/name: \1 ${{ env.TAG_NAME }}/" src/settings.yml
 
       - uses: ruby/setup-ruby@v1
         with:
