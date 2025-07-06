@@ -33,7 +33,7 @@ The first draft was generated with AI help, so it might not be 100% accurate. PR
 
 ## Usage
 
-Will soon be available as Recipe!
+Recipe: https://usetrmnl.com/recipes/112422
 
 <details>
 <summary>Manual Installation</summary>
