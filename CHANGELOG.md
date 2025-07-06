@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.2](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/compare/v1.4.1...v1.4.2) (2025-07-06)
+
+
+### Bug Fixes
+
+* fake fix to trigger release ([b726aed](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/commit/b726aedc6ca5705d3f55fbd94b4b3a610bdb312f))
+
 ## [1.4.1](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/compare/v1.4.0...v1.4.1) (2025-07-06)
 
 
