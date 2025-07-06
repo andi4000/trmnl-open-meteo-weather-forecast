@@ -46,10 +46,31 @@ jobs:
         run: |
           sed -i "s/^name: \(.*\)$/name: \1 v${{ env.TAG_NAME }}/" src/settings.yml
 
-      - name: Preparing plugin files
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Install trmnlp
+        run: gem install trmnl_preview
+
+      - name: Print trmnlp version
+        run: trmnlp version
+
+      - name: Configure auth for trmnlp
+        run: |
+          mkdir -p ~/.config/trmnlp
+          cat > ~/.config/trmnlp/config.yml << EOF
+          ---
+          api_key: ${{ secrets.TRMNL_API_KEY }}
+          EOF
+
+      - name: Push plugin to TRMNL
+        run: trmnlp push --force
+
+      - name: Preparing plugin files for GitHub Release
         run: cd src && zip -r ../${{ env.ZIP_FILE }} .
 
-      - name: Create GitHub Release
+      - name: Add Plugin file to GitHub Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
