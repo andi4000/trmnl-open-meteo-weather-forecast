@@ -32,13 +32,20 @@ The first draft was generated with AI help, so it might not be 100% accurate. PR
 </details>
 
 ## Usage
-1. Download plugin zip file from [latest release](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/releases/latest)
+
+Will soon be available as Recipe!
+
+<details>
+<summary>Manual Installation</summary>
+
+1. Download plugin zip file from [release page](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/releases)
 1. Import zip file into your TRMNL Private Plugin (Plugins > Private Plugin > Import New)
 1. Enter the Latitude and Longitude of your location
 1. Configure other fields as needed
 1. **NOTE**: if you see "Liquid error" messages on display, it is because TRMNL server hasn't fetched the weather data yet. Wait a few minutes or force update via link on the sidebar.
 1. ?
 1. Profit
+</details>
 
 ## Known Issues
 #### Weather icon, i.e. `weather_code` for daily forecast (today and tomorrow) is wild
@@ -66,3 +73,7 @@ cp .trmnlp.yml.sample .trmnlp.yml
 # (lightweight) tag the repo and push it, using this wrapper script. GH Action will create a release.
 ./bin/bumpversion minor  # major,minor,patch
 ```
+
+## Acknowledgement
+- @usetrmnl for the great product! I've been thinking of building one myself from scratch, but never had the time. Definitely not an impulse purchase but it's worth it!
+- usetrmnl/trmnlp for great software that makes it easy to develop plugin locally!
