@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/compare/v1.4.0...v1.4.1) (2025-07-06)
+
+
+### Bug Fixes
+
+* **ci:** fix plugin version string in name ([53fc363](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/commit/53fc363e275f8258387f709d0264d78f9c2fc21d))
+
 ## [1.4.0](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/compare/v1.3.4...v1.4.0) (2025-07-06)
 
 
