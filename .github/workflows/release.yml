@@ -64,6 +64,9 @@ jobs:
           api_key: ${{ secrets.TRMNL_API_KEY }}
           EOF
 
+      - name: Copy trmnlp config
+        run: cp .trmnlp.yml.sample .trmnlp.yml
+
       - name: Push plugin to TRMNL
         run: trmnlp push --force
 
