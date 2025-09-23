@@ -56,19 +56,13 @@ jobs:
       - name: Print trmnlp version
         run: trmnlp version
 
-      - name: Configure auth for trmnlp
-        run: |
-          mkdir -p ~/.config/trmnlp
-          cat > ~/.config/trmnlp/config.yml << EOF
-          ---
-          api_key: ${{ secrets.TRMNL_API_KEY }}
-          EOF
-
       - name: Copy trmnlp config
         run: cp .trmnlp.yml.sample .trmnlp.yml
 
       - name: Push plugin to TRMNL
         run: trmnlp push --force
+        env:
+          TRMNL_API_KEY: ${{ secrets.TRMNL_API_KEY }}
 
       - name: Preparing plugin files for GitHub Release
         run: cd src && zip -r ../${{ env.ZIP_FILE }} .
