@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.3](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/compare/v1.4.2...v1.4.3) (2025-09-23)
+
+
+### Bug Fixes
+
+* replace deprecated divider ([13f96d8](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/commit/13f96d8794a205974ee461716d2a451767439181))
+
 ## [1.4.2](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/compare/v1.4.1...v1.4.2) (2025-07-06)
 
 
