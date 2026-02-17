@@ -61,6 +61,7 @@ custom_fields:
   - Spanish: es
   - Italian: it
   - Dutch: nl
+  - Danish: da
 - keyname: unit_temperature
   field_type: select
   name: Temperature Unit
