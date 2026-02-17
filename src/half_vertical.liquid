@@ -56,7 +56,22 @@
   {% assign code_str_today = weather.daily.weather_code[0] | append: '' %}
 {% endcomment %}
 {% assign code_str_today = worst_weather_today | append: '' %}
-{% assign icon_today = icons[code_str_today].day %}
+
+{% # Find if worst weather happens during day or night %}
+{% assign worst_weather_today_is_day = 1 %}
+{% for idx_str in today_hourly_indices %}
+  {% assign idx = idx_str | plus: 0 %}
+  {% assign code = weather.hourly.weather_code[idx] | append: '' %}
+  {% if code == worst_weather_today %}
+    {% assign worst_weather_today_is_day = weather.hourly.is_day[idx] %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% assign icon_today = icons[code_str_today].night %}
+{% if worst_weather_today_is_day == 1 %}
+  {% assign icon_today = icons[code_str_today].day %}
+{% endif %}
 
 {% # LAYOUT # %}
 <div class="layout layout--col layout--stretch">
