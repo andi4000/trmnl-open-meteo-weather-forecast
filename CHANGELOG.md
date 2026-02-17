@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/compare/v1.5.3...v1.6.0) (2026-02-17)
+
+
+### Features
+
+* add support for Danish (da) ([c5ad22c](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/commit/c5ad22cd601fe81194b4c1b26c84b3f2ac3e6af3))
+
 ## [1.5.3](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/compare/v1.5.2...v1.5.3) (2026-02-17)
 
 
