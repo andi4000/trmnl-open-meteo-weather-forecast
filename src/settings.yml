@@ -24,8 +24,10 @@ custom_fields:
     Hourly weather forecast plugin with Open-Meteo Backend. No API key required.
     <br>Choose "Install" to get latest updates and fixes.
     <br>
-    <br>NOTE: If you get "Liquid error" message, click save after plugin install/fork to fetch the weather data.
+    <br>NOTE1: If you get "Liquid error" message, click save after plugin install/fork to fetch the weather data.
     Then click on "Force Refresh".
+    <br>
+    <br>NOTE2: Make sure your instance has refresh interval of 15 min, instead of 1x/day.
     <br>
     <br>Report bugs and translation issues on GitHub link below.
   github_url: https://github.com/andi4000/trmnl-open-meteo-weather-forecast
