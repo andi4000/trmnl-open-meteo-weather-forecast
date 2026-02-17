@@ -37,7 +37,7 @@ The first draft was generated with AI help, so it might not be 100% accurate. PR
 
 ## Usage
 
-Fork the recipe here: https://usetrmnl.com/recipes/112422
+Install (or fork) the recipe here: https://usetrmnl.com/recipes/112422
 
 <details>
 <summary>Alternative: Manual Installation</summary>
