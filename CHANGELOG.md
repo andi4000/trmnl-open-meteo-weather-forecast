@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.5](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/compare/v1.4.4...v1.4.5) (2026-02-17)
+
+
+### Bug Fixes
+
+* correct day/night today's icon for worst weather [#8](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/issues/8) ([de8679b](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/commit/de8679bea6714317668ddf484305bbcb143cb096))
+
 ## [1.4.4](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/compare/v1.4.3...v1.4.4) (2026-02-17)
 
 
