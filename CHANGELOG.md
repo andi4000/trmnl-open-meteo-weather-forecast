@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.4](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/compare/v1.4.3...v1.4.4) (2026-02-17)
+
+
+### Bug Fixes
+
+* fix upstream api changes ([4312bd7](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/commit/4312bd7c92ee34f2027e6489317121a8fa33d6ea))
+* **full-display:** fix tomorrow's row squeezed to the left ([887e200](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/commit/887e20022c798085a1324133c696389a4fa73617))
+
 ## [1.4.3](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/compare/v1.4.2...v1.4.3) (2025-09-23)
 
 
