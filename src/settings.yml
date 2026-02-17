@@ -20,7 +20,7 @@ custom_fields:
 - keyname: fubar
   name: Open-Meteo Hourly Weather Forecast
   field_type: author_bio
-  category: weather,open-meteo,forecast
+  category: weather
   description: >
     Hourly weather forecast plugin with Open-Meteo Backend. No API key required.
     <br>Choose "Install" to get latest updates and fixes.
