@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/compare/v1.4.6...v1.5.0) (2026-02-17)
+
+
+### Features
+
+* better version string injection ([a08923f](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/commit/a08923f213327d1486ba9c67a7767f8fe3cb4117))
+
 ## [1.4.6](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/compare/v1.4.5...v1.4.6) (2026-02-17)
 
 
