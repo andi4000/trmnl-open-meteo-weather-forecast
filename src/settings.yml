@@ -12,7 +12,7 @@ dark_mode: 'no'
 static_data: ''
 strategy: polling
 polling_verb: get
-polling_url: "https://api.open-meteo.com/v1/forecast?latitude={{lat}}&longitude={{lon}}&temperature_unit={{unit_temperature}}&daily=weather_code,sunrise,sunset,temperature_2m_max,temperature_2m_min&hourly=temperature_2m,weather_code,is_day&models=best_match&current=temperature_2m,is_day,weather_code&timezone=auto&forecast_days=3\r\nhttps://andi4000.github.io/weather-app-assets/open-meteo/descriptions.v1.json\r\nhttps://andi4000.github.io/weather-app-assets/open-meteo/iconsmapping.v1.json\r\nhttps://andi4000.github.io/weather-app-assets/i18n.json"
+polling_url: "https://api.open-meteo.com/v1/forecast?latitude={{lat}}&longitude={{lon}}{% if unit_temperature == 'fahrenheit' %}&temperature_unit=fahrenheit{% endif %}&daily=weather_code,sunrise,sunset,temperature_2m_max,temperature_2m_min&hourly=temperature_2m,weather_code,is_day&models=best_match&current=temperature_2m,is_day,weather_code&timezone=auto&forecast_days=3\r\nhttps://andi4000.github.io/weather-app-assets/open-meteo/descriptions.v1.json\nhttps://andi4000.github.io/weather-app-assets/open-meteo/iconsmapping.v1.json\nhttps://andi4000.github.io/weather-app-assets/i18n.json"
 polling_headers: ''
 refresh_interval: 15
 id: 112422
