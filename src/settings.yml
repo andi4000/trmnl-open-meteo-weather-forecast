@@ -18,8 +18,9 @@ refresh_interval: 15
 id: 112422
 custom_fields:
 - keyname: fubar
-  name: About This Plugin
+  name: Open-Meteo Hourly Weather Forecast
   field_type: author_bio
+  category: weather,open-meteo,forecast
   description: >
     Hourly weather forecast plugin with Open-Meteo Backend. No API key required.
     <br>Choose "Install" to get latest updates and fixes.

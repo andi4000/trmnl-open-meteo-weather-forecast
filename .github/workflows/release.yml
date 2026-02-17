@@ -44,7 +44,8 @@ jobs:
 
       - name: Inject version string into plugin name
         run: |
-          sed -i "s/^name: \(.*\)$/name: \1 ${{ env.TAG_NAME }}/" src/settings.yml
+          PLUGIN_NAME="Open-Meteo Hourly Weather Forecast"
+          sed -i "s/${PLUGIN_NAME}/${PLUGIN_NAME} ${{ env.TAG_NAME }}/g" src/settings.yml
 
       - uses: ruby/setup-ruby@v1
         with:
