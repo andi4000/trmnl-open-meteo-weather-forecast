@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.2](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/compare/v1.5.1...v1.5.2) (2026-02-17)
+
+
+### Bug Fixes
+
+* use pre-approved category ([9701d70](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/commit/9701d703dcf294fa8d5a6864f02908d8a11002d0))
+
 ## [1.5.1](https://github.com/andi4000/trmnl-open-meteo-weather-forecast/compare/v1.5.0...v1.5.1) (2026-02-17)
 
 
